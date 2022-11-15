@@ -1,0 +1,24 @@
+.navbar {
+  background-color: rgb(69, 69, 185);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.about-heading {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.phishing-image {
+  width: 100%;
+}
+.row-container {
+  margin-top: 5em;
+  height: 60vh;
+}
+.row:nth-child(odd) .alterGrid {
+  order: 1;
+}
+.row-container:last-child {
+  margin-bottom: 5em;
+}

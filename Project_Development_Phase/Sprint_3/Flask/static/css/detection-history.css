@@ -1,0 +1,76 @@
+.navbar {
+  background-color: rgb(69, 69, 185);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.detection-history-div {
+  margin-top: 3em;
+}
+.detection-history-heading {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  font-weight: bold;
+  text-align: center;
+}
+.card-container {
+  margin-top: 1em;
+  padding: 1em;
+  text-align: center;
+}
+
+.fa-trash {
+  font-size: 20px;
+}
+.safe {
+  color: hsl(158, 36%, 37%);
+}
+.unsafe {
+  color: rgb(194, 4, 4);
+}
+.safe-text,
+.unsafe-text,
+.table-heading {
+  font-weight: bold;
+}
+.table-heading {
+  font-size: 1.5em;
+  text-align: center;
+}
+.Search-container {
+  width: 20em;
+  height: 5em;
+  margin-bottom: 2em;
+}
+
+.has-search .form-control {
+  padding-left: 2.375rem;
+}
+.has-search {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.has-search input {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom: 2px solid black;
+}
+.has-search input:focus {
+  outline: none;
+  box-shadow: none;
+  border-bottom: 2px solid black;
+}
+.total-records {
+  float: right;
+}
+.form-control-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+
+  text-align: center;
+  pointer-events: none;
+  color: #aaa;
+}

@@ -1,0 +1,24 @@
+{
+  "carousel_content": [
+    {
+      "caption-title": "Phishing ?",
+      "caption-description": "    Phishing is a form of fraudulent attack where the attacker tries to gain sensitive information by posing as a reputable source.",
+      "carousel-image": "./static/images/Carousel_1.jpeg"
+    },
+    {
+      "caption-title": "Who is a cyber adversary?",
+      "caption-description": " A cyber adversary is someone or a group that intends to perform malicious actions against other cyber resources.",
+      "carousel-image": "./static/images/Carousel_2.jpeg"
+    },
+    {
+      "caption-title": "Phishing email ?",
+      "caption-description": "A phishing email typically claims to be from a legitimate enterprise and contains a link that leads to a site which looks exactly like the original one.",
+      "carousel-image": "./static/images/Carousel_3.jpeg"
+    },
+    {
+      "caption-title": "Target of Phishing ?",
+      "caption-description": "Phishing may target every industry and individual, from a business executive to a home social network member or an online banking customer",
+      "carousel-image": "./static/images/Carousel_4.avif"
+    }
+  ]
+}

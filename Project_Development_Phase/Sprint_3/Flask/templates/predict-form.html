@@ -1,0 +1,98 @@
+{% extends "./templates/base.html" %} {% block base %} {%include
+"./templates/navbar.html" %}
+<link rel="stylesheet" href="../static/css/predict-form.css" />
+<div class="container-fluid predict-form-div">
+  <div class="row">
+    <div class="col-lg-7">
+      <img src="../static/images/Carousel_4.avif" class="predict-image" />
+    </div>
+    <div class="col-lg-5 predict-form-container">
+      <div class="card form-card-div">
+        <h2 id="heading">Phishing Detection</h2>
+        <p id="required">Fill all form field to go to next step</p>
+        <form id="msform" autocomplete="off" action="http://localhost:5000/predict/" method="POST">
+          <ul id="progressbar">
+            <li class="active" id="title"><strong>Title</strong></li>
+            <li id="personal"><strong>URL</strong></li>
+            <li id="confirm"><strong>Confirm</strong></li>
+          </ul>
+          <div class="progress">
+            <div
+              class="progress-bar progress-bar-striped progress-bar-animated"
+              role="progressbar"
+              aria-valuemin="0"
+              aria-valuemax="100"
+            ></div>
+          </div>
+          <br />
+          <fieldset class="title-section">
+            <div class="form-card">
+              <label class="fieldlabels">Title: *</label>
+              <input
+                type="text"
+                name="title"
+                placeholder="Title"
+                class="getTitle"
+              />
+            </div>
+            <input
+              type="button"
+              name="next"
+              class="next action-button"
+              value="Next"
+            />
+          </fieldset>
+          <fieldset class="url-section">
+            <div class="form-card">
+              <label class="fieldlabels">URL: *</label>
+              <input type="text" name="url" placeholder="URL" class="getURL" />
+            </div>
+            <input
+              type="button"
+              name="next"
+              class="next sureButton action-button"
+              value="Next"
+            />
+            <input
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+          </fieldset>
+          <fieldset class="confirm-section">
+            <div class="form-card card confirm-div">
+              <h5>Are you sure to submit?</h5>
+              <table>
+                <tr>
+                  <td>Title :</td>
+                  <td class="urltitle"></td>
+                </tr>
+                <tr>
+                  <td>Url :</td>
+                  <td class="url"></td>
+                </tr>
+              </table>
+            </div>
+            <input
+              type="submit"
+              name="submit"
+              class="action-button"
+              value="Submit"
+            />
+            <input
+              type="button"
+              name="previous"
+              class="previous action-button-previous"
+              value="Previous"
+            />
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script src="../static/js/predict-form.js"></script>
+{% endblock %}

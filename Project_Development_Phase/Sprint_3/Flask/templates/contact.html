@@ -1,0 +1,71 @@
+{% extends "./templates/base.html" %} {% block base %} {%include
+"./templates/navbar.html" %}
+<link rel="stylesheet" href="../static/css/contact.css" />
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" />
+<div class="container">
+  <h1 class="contact-us-heading">Contact Us!</h1>
+  <form class="contact-form" data-aos="zoom-in" autocomplete="off">
+    <ul>
+      <li class="input-list success-parent">
+        <span class="alert alert-success contact-success-message" role="alert"
+          >Form Submitted Successfully!</span
+        >
+      </li>
+      <li class="input-list">
+        <label for="name"
+          ><span class="span-label"
+            >Name <span class="required-star">*</span></span
+          ></label
+        >
+        <input type="text" id="name" name="name" class="fullName" required />
+      </li>
+      <li class="input-list">
+        <label for="mail" class="email"
+          ><span class="span-label"
+            >Email <span class="required-star">*</span></span
+          ></label
+        >
+        <input type="email" id="mail" name="email" class="emailId" required />
+      </li>
+      <li class="input-list">
+        <label for="msg"><span class="span-label">Message</span></label>
+        <textarea
+          rows="4"
+          cols="50"
+          name="msg"
+          class="message"
+          required
+        ></textarea>
+      </li>
+
+      <li class="input-list">
+        <input type="submit" class="contact-form-submit-button" />
+      </li>
+    </ul>
+  </form>
+</div>
+<div class="floatingIcon">
+  <a
+    href="https://github.com/IBM-EPBL/IBM-Project-44647-1660725800/"
+    class="float github"
+  >
+    <i class="fa fa-github my-float"></i>
+  </a>
+  <a href="https://youtube.com/" class="float youtube">
+    <i class="fa fa-youtube-play my-float"></i>
+  </a>
+  <a href="https://linkedin.com/" class="float">
+    <i class="fa fa-linkedin my-float"></i>
+  </a>
+  <a href="https://instagram.com/" class="float instagram">
+    <i class="fa fa-instagram my-float"></i>
+  </a>
+</div>
+<script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"
+></script>
+
+<script src="../static/js/contact.js"></script>
+{% endblock %}

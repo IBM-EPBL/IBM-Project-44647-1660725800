@@ -1,0 +1,44 @@
+{% extends "./templates/base.html" %} {% block base %} {%include
+"./templates/navbar.html" %}
+<div class="heading-div">
+  <h3 class="heading">Web Phishing Detection</h3>
+  <p>Is your link safe or malicious?<br />Try our service</p>
+  {% if not userInfo %}
+  <button
+    class="btn btn-primary"
+    data-toggle="modal"
+    data-target="#exampleModalCenter"
+    data-backdrop="static"
+    data-keyboard="false"
+  >
+    Login here
+  </button>
+  {% endif %} {% if userInfo %}
+  <button class="btn btn-primary" onclick="location.href = '/predict';">
+    Get Started
+  </button>
+  {% endif %}
+</div>
+<div id="magicCarousel" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner" role="listbox">
+    {% for content in carousel_content %}
+    <div class="carousel-item">
+      <img src="{{content['carousel-image']}}" class="d-block" />
+      <div class="carousel-caption">
+        <h3>{{content['caption-title']}}</h3>
+        <p>{{content['caption-description']}}</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <ol class="carousel-indicators">
+      <li data-target="#magicCarousel" data-slide-to="0" class="active"></li>
+      <li data-target="#magicCarousel" data-slide-to="1"></li>
+      <li data-target="#magicCarousel" data-slide-to="2"></li>
+      <li data-target="#magicCarousel" data-slide-to="3"></li>
+    </ol>
+  </div>
+</div>
+
+<script src="./static/js/index.js"></script>
+{% endblock %}

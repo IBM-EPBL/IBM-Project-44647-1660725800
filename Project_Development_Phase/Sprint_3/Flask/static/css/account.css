@@ -1,0 +1,65 @@
+.title {
+  text-align: center;
+  font-weight: bold;
+  margin: 0;
+}
+.subtitle {
+  text-align: center;
+  font-weight: bold;
+}
+.btn-text {
+  margin: 0;
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+}
+.form-inputs label {
+  color: rgb(170 166 166);
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="number"] {
+  padding: 15px 20px;
+  margin-top: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+
+.cta-btn {
+  background-color: rgb(69, 69, 185);
+  color: white;
+  padding: 18px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+}
+.login-container {
+  margin: 1em;
+}
+.signup-container {
+  margin: 1em;
+}
+.login {
+  display: block;
+}
+.signup {
+  display: none;
+}
+.loginErrorMessage {
+  display: block;
+}
+.signupErrorMessage {
+  display: block;
+}
+.password-error {
+  color: red;
+}

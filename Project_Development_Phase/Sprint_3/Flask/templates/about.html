@@ -1,0 +1,30 @@
+{% extends "./templates/base.html" %} {% block base %} {%include
+"./templates/navbar.html" %}
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.0/dist/aos.css" />
+<link rel="stylesheet" href="../static/css/about.css" />
+<link
+  href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+  rel="stylesheet"
+/>
+<div class="container my-5">
+  <h1 class="about-heading">About</h1>
+  {% for about in aboutContents %}
+  <div class="row row-container" data-aos="zoom-in">
+    <div class="col-md-6 p-0 text-center alterGrid">
+      <img src="{{about.imageURL}}" class="w-100" alt="" />
+    </div>
+    <div class="col-md-6 p-4 p-sm-5">
+      <h1 class="h2 mb-4" style="font-weight: 600">{{about.title}}</h1>
+      <p class="text-secondary" style="line-height: 2">{{about.description}}</p>
+      {% if about.techStacksList %} {% for list in about.techStacksList %}
+      <ul>
+        <li>{{list}}</li>
+      </ul>
+      {% endfor %} {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<script src="https://unpkg.com/aos@2.3.0/dist/aos.js"></script>
+<script src="../static/js/about.js"></script>
+{% endblock %}

@@ -1,0 +1,127 @@
+.navbar {
+  background-color: rgb(69, 69, 185);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+label,
+.fullName,
+.emailId,
+.message,
+.contact-form-submit-button {
+  display: block;
+  width: 100%;
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.input-list {
+  padding: 0.15em;
+}
+.span-label {
+  font-weight: 700;
+  color: #102a43;
+  line-height: 35px;
+  line-height: 2.5rem;
+  font-size: 12px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+.contact-form-submit-button {
+  background: rgb(69, 69, 185);
+  color: white;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  margin-top: 1.3em;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  cursor: pointer;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.contact-form {
+  background-color: #ffffff;
+  padding-top: 40px;
+  padding-right: 40px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 3px;
+  overflow: hidden;
+}
+.required-star {
+  color: red;
+}
+
+.fullName,
+.emailId,
+.message {
+  width: 100%;
+  padding: 15px 20px;
+  border: 1px solid #e1e2eb;
+  background-color: #fff;
+  color: #102a43;
+  caret-color: #829ab1;
+  box-sizing: border-box;
+  font-size: 1rem;
+  line-height: 1rem;
+  box-shadow: inset 0 2px 4px 0 rgba(206, 209, 224, 0.2);
+  border-radius: 3px;
+}
+.floatingIcon {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+}
+.float {
+  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  display: block;
+  background-color: #06c;
+  color: #fff;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+.youtube {
+  background-color: red;
+}
+.instagram {
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+}
+.github {
+  background-color: #1d1a1a;
+}
+.my-float {
+  font-size: 24px;
+  margin-top: 18px;
+}
+.float:hover {
+  color: white;
+}
+.contact-us-heading {
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+}
+.contact-success-message {
+  text-align: center;
+  display: none;
+}
+.success-parent {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}

@@ -1,0 +1,245 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap");
+
+body {
+  font-family: "Poppins", sans-serif !important;
+}
+.js-menu-show {
+  color: white !important;
+}
+.userInfo,
+.welcomeUser,
+.vertical-line,
+.loginButton {
+  display: none;
+}
+#heading {
+  text-transform: uppercase;
+  color: rgb(69, 69, 185);
+  font-weight: normal;
+  text-align: center;
+}
+#msform {
+  text-align: center;
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+}
+#msform fieldset {
+  background: white;
+  border: 0 none;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0;
+  padding-bottom: 20px;
+  position: relative;
+}
+.form-card {
+  text-align: left;
+}
+#msform fieldset:not(:first-of-type) {
+  display: none;
+}
+#msform input,
+#msform textarea {
+  padding: 8px 15px 8px 15px;
+  border: 1px solid #ccc;
+  border-radius: 0px;
+  margin-bottom: 25px;
+  margin-top: 2px;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: montserrat;
+  color: #2c3e50;
+  background-color: #eceff1;
+  font-size: 16px;
+  letter-spacing: 1px;
+}
+#msform input:focus,
+#msform textarea:focus {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 1px solid rgb(69, 69, 185);
+  outline-width: 0;
+}
+#msform .action-button {
+  width: 100px;
+  background: rgb(69, 69, 185);
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 0px 10px 5px;
+  margin-right: 8em;
+  float: right;
+}
+#msform .action-button:first-of-type {
+  float: none;
+  text-align: center;
+  margin-right: 0em;
+}
+#msform .action-button:hover,
+#msform .action-button:focus {
+  background-color: #311b92;
+}
+#msform .action-button-previous {
+  width: 100px;
+  background: #616161;
+  font-weight: bold;
+  color: white;
+  border: 0 none;
+  border-radius: 0px;
+  cursor: pointer;
+  padding: 10px 5px;
+  margin: 10px 5px 10px 0px;
+  margin-left: 8em;
+  float: left;
+}
+#msform .action-button-previous:hover,
+#msform .action-button-previous:focus {
+  background-color: #000000;
+}
+.form-card-div {
+  z-index: 0;
+  border: none;
+  position: relative;
+}
+#required {
+  text-align: center;
+}
+.fs-title {
+  font-size: 25px;
+  color: rgb(69, 69, 185);
+  margin-bottom: 15px;
+  font-weight: normal;
+  text-align: left;
+}
+.purple-text {
+  color: rgb(69, 69, 185);
+  font-weight: normal;
+}
+.steps {
+  font-size: 25px;
+  color: gray;
+  margin-bottom: 10px;
+  font-weight: normal;
+  text-align: right;
+}
+.fieldlabels {
+  color: gray;
+  text-align: left;
+}
+#progressbar {
+  margin-bottom: 30px;
+  overflow: hidden;
+  color: lightgrey;
+}
+#progressbar .active {
+  color: rgb(69, 69, 185);
+}
+#progressbar li {
+  list-style-type: none;
+  font-size: 15px;
+  width: 30%;
+  float: left;
+  position: relative;
+  font-weight: 400;
+}
+#progressbar #title:before {
+  font-family: FontAwesome;
+  content: "\f1dc";
+}
+#progressbar #personal:before {
+  font-family: FontAwesome;
+  content: "\f0c1";
+}
+#progressbar #confirm:before {
+  font-family: FontAwesome;
+  content: "\f058";
+}
+#progressbar li:before {
+  width: 50px;
+  height: 50px;
+  line-height: 45px;
+  display: block;
+  font-size: 20px;
+  color: #ffffff;
+  background: lightgray;
+  border-radius: 50%;
+  margin: 0 auto 10px auto;
+  padding: 2px;
+}
+#progressbar li:after {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background: lightgray;
+  position: absolute;
+  left: 0;
+  top: 25px;
+  z-index: -1;
+}
+#progressbar li.active:before,
+#progressbar li.active:after {
+  background: rgb(69, 69, 185);
+}
+.progress {
+  height: 20px;
+}
+.progress-bar {
+  background-color: rgb(69, 69, 185);
+}
+.fit-image {
+  width: 100%;
+  object-fit: cover;
+}
+.predict-form-div {
+  height: 100vh;
+}
+.predict-form-container {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 3em;
+  padding-right: 3em;
+}
+.confirm-div {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  margin-bottom: 2em;
+}
+.confirm-div h5 {
+  margin-top: 1em;
+  text-align: center;
+}
+.confirm-div table {
+  margin-top: 1em;
+}
+
+td {
+  font-size: 1.2em;
+  padding-top: 0.5em;
+  padding-right: 1em;
+  font-family: sans-serif;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+.container-fluid {
+  padding-left: 0px;
+}
+.predict-image {
+  height: 100vh;
+  width: 100%;
+  filter: brightness(90%);
+  object-fit: cover;
+}
+.has-error {
+  color: red;
+}
