@@ -1,7 +1,127 @@
 {% extends "./templates/base.html" %} {% block base %} {%include
-    "./templates/navbar.html" %}
+"./templates/navbar.html" %}
 <link rel="stylesheet" href="../static/css/prediction-result.css" />
-<div class="card">
-    {{pred}} 
+<div class="container prediction-result-div">
+  <h3 class="prediction-result-heading">Here is your URL status!</h3>
+  <div class="row sub-div">
+    <div class="col-lg-6">
+      <div class="col-lg-12 card content-div content-div-1 mb-4  h-100">
+        <div class="content">
+            <div class="header">
+              <h3>STATUS</h3>
+              <h1 class="url-heading">{{urlInfo['title']}}</h1>
+            </div>
+            <p class="url-link">{{urlInfo['url']}}</p>
+            <div class="desc">
+                {% if urlInfo['safe']%}
+              <p>This is not a phishing URL. So, you can give any of your details in this site</p>
+              {%endif %}
+              {% if not urlInfo['safe']%}
+              <p>This is a phishing URL. Please don't give your details. Be Safe!</p>
+              {%endif %}
+            </div>
+            <div class="status">
+                {% if urlInfo['safe']%}
+              <div class="status-text safe-text">Safe Link<i class="fa fa-check safe" aria-hidden="true"></i></div>
+              {%endif %}
+              {% if not urlInfo['safe']%}
+              <div class="status-text unsafe-text">Unsafe Link<i class="fa fa-times unsafe" aria-hidden="true"></i></div>
+              {%endif %}
+            </div>
+            {% if urlInfo['safe']%}
+            <a href={{urlInfo['url']}}><i class="fa fa-link"></i>Go to this site</a>
+            {%endif %}
+            {% if not urlInfo['safe']%}
+            <span class="warning"><i class="fa fa-warning"></i>Don't go to this site</span>
+
+            {%endif %}
+          </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="col-lg-12 card content-div mb-4  h-100">
+        {% if urlInfo['safe'] %}
+        <img src="../static/images/smileyEmoji.png" class="smiley-image" />
+        {% endif %} {% if not urlInfo['safe'] %}
+        <img src="../static/images/shockedEmoji.png" class="shocked-image" />
+        {% endif %}
+        <h3 class="result-message">{{urlInfo['message']}}</h1>
+      </div>
+    </div>
+  </div>
 </div>
+{% if not urlInfo['safe']%}
+<div class="container">
+    <section class="faq-section">
+        <h1 class="faq-title">FAQs about phishing URL</h1>
+        <div>
+                   
+                    <ul class="faq-list">
+                        <li>
+                            <h4 class="faq-heading"> Why choose digital marketing agencies in bangalore? </h4>
+                            <p class="read faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, felis quis
+                                viverra mattis, quam mi elementum ipsum, lacinia blandit ipsum massa a elit. Suspendisse
+                                metus ex, porta ut velit vitae, sagittis dapibus sapien. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nulla mollis maximus sem, id malesuada neque porta id.
+                                Praesent scelerisque molestie mollis. Integer nec ullamcorper massa.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading"> Why choose digital marketing agencies in bangalore? </h4>
+                            <p class="read faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, felis quis
+                                viverra mattis, quam mi elementum ipsum, lacinia blandit ipsum massa a elit. Suspendisse
+                                metus ex, porta ut velit vitae, sagittis dapibus sapien. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nulla mollis maximus sem, id malesuada neque porta id.
+                                Praesent scelerisque molestie mollis. Integer nec ullamcorper massa.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading"> Why choose digital marketing agencies in bangalore? </h4>
+                            <p class="read faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, felis quis
+                                viverra mattis, quam mi elementum ipsum, lacinia blandit ipsum massa a elit. Suspendisse
+                                metus ex, porta ut velit vitae, sagittis dapibus sapien. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nulla mollis maximus sem, id malesuada neque porta id.
+                                Praesent scelerisque molestie mollis. Integer nec ullamcorper massa.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading">
+                                What is the difference between white hat and black hat
+                                SEO techniques
+                            </h4>
+                            <p class="read faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, felis quis
+                                viverra mattis, quam mi elementum ipsum, lacinia blandit ipsum massa a elit. Suspendisse
+                                metus ex, porta ut velit vitae, sagittis dapibus sapien. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nulla mollis maximus sem, id malesuada neque porta id.
+                                Praesent scelerisque molestie mollis. Integer nec ullamcorper massa.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading">
+                                What is the difference between white hat and black hat
+                                SEO techniques
+                            </h4>
+                            <p class="read faq-text">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi aliquam, felis quis
+                                viverra mattis, quam mi elementum ipsum, lacinia blandit ipsum massa a elit. Suspendisse
+                                metus ex, porta ut velit vitae, sagittis dapibus sapien. Lorem ipsum dolor sit amet,
+                                consectetur adipiscing elit. Nulla mollis maximus sem, id malesuada neque porta id.
+                                Praesent scelerisque molestie mollis. Integer nec ullamcorper massa.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+    </section>
+</div>
+{%endif %}
+
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+></script>
+<script src="../static/js/prediction-result.js"></script>
 {% endblock %}
+

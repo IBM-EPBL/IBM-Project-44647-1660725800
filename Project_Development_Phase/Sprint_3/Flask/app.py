@@ -4,14 +4,15 @@ from dotenv import load_dotenv
 from functools import wraps
 from http.client import HTTPException
 import numpy as np
-from flask import Flask, request, render_template,session, url_for,redirect,flash
+from flask import Flask, request, render_template,session, url_for,redirect,flash,jsonify
 import pickle
 import inputScript
 import pymongo
 from passlib.hash import  pbkdf2_sha256
 import json
 import inputScript 
-  
+import urllib.request
+import io
 app = Flask(__name__,template_folder='../Flask')
 model = pickle.load(open('../Flask/Phishing_Website.pkl','rb'))
 
@@ -51,6 +52,7 @@ def start_session(userInfo):
     del userInfo['password']
     session['logged_in']=True
     session['user']=userInfo
+    session['predicted']=False
     return redirect(url_for('index'))
 
 
@@ -119,28 +121,68 @@ def index():
 @login_required
 def predict():
     if request.method == 'POST':
+        title=request.form['title']
         url = request.form['url']
         checkprediction = inputScript.main(url)
-        print(url)
-        print(checkprediction)
         prediction = model.predict(checkprediction)
-        print(prediction)
         output=prediction[0]
+        session['predicted']=True
         if(output==1):
-            pred="Safe,legitimate link"
-            
+            pred = "Wohoo! You are good to go."
+            session['pred'] = pred
+            session['title']=title
+            session['url']=url
+            session['safe']=True
+            print(session['pred'])
+
         else:
-            pred="Malicious URL alert!"
+            pred = "Oh no! This is a Malicious URL"
+            session['pred'] = pred
+            session['title']=title
+            session['url']=url
+            session['safe']=False
+
+        detectionInfo={
+            'title':session['title'],
+            'url':session['url'],
+            'safe': session['safe'],
+
+        }
+        account.update_one({ "email" : session['user']['email']},
+            { "$push": {"detectionInfo": detectionInfo
+        }})
+
         if(session and session['logged_in']):
             if(session['logged_in']==True):
-                return render_template('./templates/prediction-result.html',userInfo=session['user'],pred=pred)
-            # else:
-            #     return render_template('./templates/prediction-result.html',pred=pred)
-        # else:
-        #     return render_template('./templates/prediction-result.html',pred=pred)
+                return redirect(url_for('predictionResult'))
     elif request.method == 'GET':
         return render_template('./templates/predict-form.html',userInfo=session['user'])
-    
+
+
+@app.route('/prediction-result/')
+@login_required
+def predictionResult():
+    if(session['predicted']==True):
+        urlInfo={
+        'message' :session['pred'] ,
+        'title':session['title'],
+        'url':session['url'],
+        'safe':session['safe']
+        }
+        
+        return render_template("./templates/prediction-result.html", urlInfo=jsonify(urlInfo),userInfo=session['user'])
+    else:
+        return redirect(url_for('predict'))
+
+@app.route('/detection-history/')
+@login_required
+def detectionHistory():
+    if(session and session['logged_in']):
+        if(session['logged_in']==True):
+            getDetectionHistory=account.find({"email":session['user']['email']},{"_id":0,"detectionInfo":1})
+            return render_template('./templates/detection-history.html',userInfo=session['user'],detectionHistory=list(getDetectionHistory)[0]['detectionInfo'])
+
+
 @app.route('/about/')
 def about():
     if(session and session['logged_in']):

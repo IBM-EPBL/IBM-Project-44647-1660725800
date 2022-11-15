@@ -1,0 +1,49 @@
+{% extends "./templates/base.html" %} {% block base %} {%include
+"./templates/navbar.html" %}
+<link rel="stylesheet" href="../static/css/detection-history.css" />
+<div class="container detection-history-div">
+  <h1 class="detection-history-heading">Detection History</h1>
+
+  <div class="Search-container">
+    <div class="form-group has-search">
+      <span class="fa fa-search form-control-feedback"></span>
+      <input
+        type="text"
+        class="form-control search-detection"
+        placeholder="Search"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 table-heading">Title</div>
+    <div class="col-lg-6 col-md-6 col-sm-6 table-heading">URL</div>
+    <div class="col-lg-2 col-md-2 col-sm-2 table-heading">Status</div>
+    <div class="col-lg-2 col-md-2 col-sm-2 table-heading">Action</div>
+  </div>
+  {%for history in detectionHistory %}
+
+  <div class="card card-container table-content">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2">{{history['title']}}</div>
+      <div class="col-lg-6 col-md-6 col-sm-6">{{history['url']}}</div>
+      {% if history['safe'] %}
+      <div class="col-lg-2 col-md-2 col-sm-2 safe">
+        <span class="safe-text"> Safe Link</span>
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </div>
+      {% endif %} {% if not history['safe'] %}
+      <div class="col-lg-2 col-md-2 col-sm-2 unsafe">
+        <span class="unsafe-text"> Unsafe Link </span
+        ><i class="fa fa-check" aria-hidden="true"></i>
+      </div>
+      {% endif %}
+      <div class="col-lg-2 col-md-2 col-sm-2">
+        <i class="fa fa-trash" aria-hidden="true"></i>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+<script src="../static/js/detection-history.js"></script>
+{% endblock %}

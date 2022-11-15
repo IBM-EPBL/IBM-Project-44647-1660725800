@@ -36,7 +36,7 @@ $(document).ready(function () {
       rules: {
         title: {
           required: true,
-          minlength: 6,
+          maxlength: 8,
         },
         url: {
           required: true,
@@ -102,6 +102,3 @@ document
       $(".getTitle").val();
     document.getElementsByClassName("url")[0].innerHTML = $(".getURL").val();
   });
-
-//   e.preventDefault();
-// });
