@@ -14,10 +14,13 @@
             <p class="url-link">{{urlInfo['url']}}</p>
             <div class="desc">
                 {% if urlInfo['safe']%}
-              <p>This is not a phishing URL. So, you can give any of your details in this site</p>
+              <p>This is not a phishing URL. So, you can share any of your details in this site</p>
               {%endif %}
               {% if not urlInfo['safe']%}
-              <p>This is a phishing URL. Please don't give your details. Be Safe!</p>
+              <p>This is a phishing URL. Please don't share your details. Be Safe!</p>
+              <div class="faqLink">
+              <a href="#faq-section" >FAQs On Phishing URL</a>
+              </div>
               {%endif %}
             </div>
             <div class="status">
@@ -29,7 +32,7 @@
               {%endif %}
             </div>
             {% if urlInfo['safe']%}
-            <a href={{urlInfo['url']}}><i class="fa fa-link"></i>Go to this site</a>
+            <a href={{urlInfo['url']}} class="siteLink"><i class="fa fa-link"></i>Go to this site</a>
             {%endif %}
             {% if not urlInfo['safe']%}
             <span class="warning"><i class="fa fa-warning"></i>Don't go to this site</span>
@@ -46,13 +49,17 @@
         <img src="../static/images/shockedEmoji.png" class="shocked-image" />
         {% endif %}
         <h3 class="result-message">{{urlInfo['message']}}</h1>
+      <a href="/detection-history">Detection History</a>
+      <a href="/detect">Detect Again</a>
+
+
       </div>
     </div>
   </div>
 </div>
 {% if not urlInfo['safe']%}
 <div class="container">
-    <section class="faq-section">
+    <section id="faq-section">
         <h1 class="faq-title">FAQs about phishing URL</h1>
         <div>
                    

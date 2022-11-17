@@ -21,10 +21,10 @@
   font-size: 20px;
 }
 .safe {
-  color: hsl(158, 36%, 37%);
+  color: hsl(158, 36%, 37%) !important;
 }
 .unsafe {
-  color: rgb(194, 4, 4);
+  color: rgb(194, 4, 4) !important;
 }
 .safe-text,
 .unsafe-text,
@@ -73,4 +73,19 @@
   text-align: center;
   pointer-events: none;
   color: #aaa;
+}
+.safe a i {
+  margin-right: 0.3em;
+}
+.unsafe span {
+  margin-left: 0.3em;
+}
+.safe a {
+  color: hsl(158, 36%, 37%) !important;
+  cursor: pointer;
+  font-weight: bold;
+}
+.unsafe-notAllowed {
+  cursor: not-allowed;
+  font-weight: bold;
 }
