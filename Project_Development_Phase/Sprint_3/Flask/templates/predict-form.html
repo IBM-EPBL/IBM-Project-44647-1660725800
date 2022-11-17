@@ -13,9 +13,13 @@
         <form
           id="msform"
           autocomplete="off"
+          onsubmit="submitForm()"
           action="http://localhost:5000/detect/"
           method="POST"
         >
+          <span class="alert alert-success loading-message" role="alert"
+            >Please Wait! Detecting your URL...</span
+          >
           <ul id="progressbar">
             <li class="active" id="title"><strong>Title</strong></li>
             <li id="personal"><strong>URL</strong></li>

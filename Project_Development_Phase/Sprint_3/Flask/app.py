@@ -128,12 +128,12 @@ def predict():
         if(output==1):
             pred = "Wohoo! You are good to go."
             session['safe']=True
-            print(session['pred'])
+            session['pred'] = pred
 
         else:
             pred = "Oh no! This is a Malicious URL"
-            session['safe']=False
-        session['pred'] = pred
+            session['safe']=True
+            session['pred'] = pred
         session['title']=title
         session['url']=url
 
@@ -200,22 +200,6 @@ def contact():
         else:
             return render_template('./templates/contact.html')
 
-
-   
-# @app.route('/predict/', methods=['POST'])
-# def y_predict():
-#     url = request.form['URL']
-#     checkprediction = inputScript.main(url)
-#     prediction = model.predict(checkprediction)
-#     print(prediction)
-#     output=prediction[0]
-#     if(output==1):
-#         pred="Your are safe!!  This is a Legitimate Website."
-        
-#     else:
-#         pred="You are on the wrong site. Be cautious!"
-#     #return render_template('final.html', prediction_text='{}'.format(pred),url=url)
-#     flash(pred)
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1', debug=True)
