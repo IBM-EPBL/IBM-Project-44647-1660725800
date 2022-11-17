@@ -4,29 +4,19 @@
 <div class="container detection-history-div">
   <h1 class="detection-history-heading">Detection History</h1>
 
-  <div class="Search-container">
-    <div class="form-group has-search">
-      <span class="fa fa-search form-control-feedback"></span>
-      <input
-        type="text"
-        class="form-control search-detection"
-        placeholder="Search"
-      />
-    </div>
-  </div>
 
   <div class="row">
     <div class="col-lg-2 col-md-2 col-sm-2 table-heading">Title</div>
-    <div class="col-lg-6 col-md-6 col-sm-6 table-heading">URL</div>
+    <div class="col-lg-5 col-md-5 col-sm-5 table-heading">URL</div>
     <div class="col-lg-2 col-md-2 col-sm-2 table-heading">Status</div>
-    <div class="col-lg-2 col-md-2 col-sm-2 table-heading">Action</div>
+    <div class="col-lg-3 col-md-3 col-sm-3 table-heading">Action</div>
   </div>
   {%for history in detectionHistory %}
 
   <div class="card card-container table-content">
     <div class="row">
       <div class="col-lg-2 col-md-2 col-sm-2">{{history['title']}}</div>
-      <div class="col-lg-6 col-md-6 col-sm-6">{{history['url']}}</div>
+      <div class="col-lg-5 col-md-5 col-sm-5">{{history['url']}}</div>
       {% if history['safe'] %}
       <div class="col-lg-2 col-md-2 col-sm-2 safe">
         <span class="safe-text"> Safe Link</span>
@@ -35,15 +25,29 @@
       {% endif %} {% if not history['safe'] %}
       <div class="col-lg-2 col-md-2 col-sm-2 unsafe">
         <span class="unsafe-text"> Unsafe Link </span
-        ><i class="fa fa-check" aria-hidden="true"></i>
+        ><i class="fa fa-times" aria-hidden="true"></i>
       </div>
       {% endif %}
-      <div class="col-lg-2 col-md-2 col-sm-2">
-        <i class="fa fa-trash" aria-hidden="true"></i>
+      {% if history['safe'] %}
+      <div class="col-lg-3  col-md-3 col-sm-3 safe">
+        <a href={{history['url']}}><i
+          class="fa fa-link " name={{history['dateAndTime']}}
+          aria-hidden="true"
+        ></i>Allowed</a>
+
       </div>
+      {% endif %}
+      {% if not history['safe'] %}
+      <div class="col-lg-3 col-md-3 col-sm-3 unsafe unsafe-notAllowed">
+        <i
+          class="fa fa-link " name={{history['dateAndTime']}}
+          aria-hidden="true"
+        ></i><span >Not allowed</span>
+
+      </div>
+      {% endif %}
     </div>
   </div>
   {% endfor %}
 </div>
-<script src="../static/js/detection-history.js"></script>
 {% endblock %}

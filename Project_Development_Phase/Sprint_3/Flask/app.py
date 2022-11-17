@@ -11,8 +11,6 @@ import pymongo
 from passlib.hash import  pbkdf2_sha256
 import json
 import inputScript 
-import urllib.request
-import io
 app = Flask(__name__,template_folder='../Flask')
 model = pickle.load(open('../Flask/Phishing_Website.pkl','rb'))
 
@@ -117,7 +115,7 @@ def index():
 
 
 
-@app.route('/predict/', methods=['GET','POST'])
+@app.route('/detect/', methods=['GET','POST'])
 @login_required
 def predict():
     if request.method == 'POST':
@@ -129,18 +127,15 @@ def predict():
         session['predicted']=True
         if(output==1):
             pred = "Wohoo! You are good to go."
-            session['pred'] = pred
-            session['title']=title
-            session['url']=url
             session['safe']=True
             print(session['pred'])
 
         else:
             pred = "Oh no! This is a Malicious URL"
-            session['pred'] = pred
-            session['title']=title
-            session['url']=url
             session['safe']=False
+        session['pred'] = pred
+        session['title']=title
+        session['url']=url
 
         detectionInfo={
             'title':session['title'],
@@ -159,7 +154,7 @@ def predict():
         return render_template('./templates/predict-form.html',userInfo=session['user'])
 
 
-@app.route('/prediction-result/')
+@app.route('/detection-result/')
 @login_required
 def predictionResult():
     if(session['predicted']==True):
@@ -170,7 +165,7 @@ def predictionResult():
         'safe':session['safe']
         }
         
-        return render_template("./templates/prediction-result.html", urlInfo=jsonify(urlInfo),userInfo=session['user'])
+        return render_template("./templates/prediction-result.html", urlInfo=urlInfo,userInfo=session['user'])
     else:
         return redirect(url_for('predict'))
 
@@ -179,7 +174,7 @@ def predictionResult():
 def detectionHistory():
     if(session and session['logged_in']):
         if(session['logged_in']==True):
-            getDetectionHistory=account.find({"email":session['user']['email']},{"_id":0,"detectionInfo":1})
+            getDetectionHistory=account.find({"email":session['user']['email']},{"_id":0,"detectionInfo":1}).sort("dateAndTime")
             return render_template('./templates/detection-history.html',userInfo=session['user'],detectionHistory=list(getDetectionHistory)[0]['detectionInfo'])
 
 
