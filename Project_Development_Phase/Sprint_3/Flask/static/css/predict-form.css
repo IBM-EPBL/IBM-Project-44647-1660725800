@@ -243,3 +243,6 @@ table {
 .has-error {
   color: red;
 }
+.loading-message {
+  display: none;
+}

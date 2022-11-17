@@ -26,11 +26,9 @@ $(document).ready(function () {
     var form = $("#msform");
     form.validate({
       highlight: function (element) {
-        console.log("error");
         $(element).closest(".form-card").addClass("has-error");
       },
       unhighlight: function (element) {
-        console.log("nonerror");
         $(element).closest(".form-card").removeClass("has-error");
       },
       rules: {
@@ -102,3 +100,6 @@ document
       $(".getTitle").val();
     document.getElementsByClassName("url")[0].innerHTML = $(".getURL").val();
   });
+function submitForm() {
+  document.getElementsByClassName("loading-message")[0].style.display = "block";
+}
