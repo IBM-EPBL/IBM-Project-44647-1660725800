@@ -100,6 +100,8 @@ document
       $(".getTitle").val();
     document.getElementsByClassName("url")[0].innerHTML = $(".getURL").val();
   });
-function submitForm() {
-  document.getElementsByClassName("loading-message")[0].style.display = "block";
-}
+
+$(".submit-button").click(function () {
+  $("div.spannerx").addClass("showx");
+  $("div.overlayx").addClass("showx");
+});
