@@ -17,9 +17,6 @@
           action="http://localhost:5000/detect/"
           method="POST"
         >
-          <span class="alert alert-success loading-message" role="alert"
-            >Please Wait! Detecting your URL...</span
-          >
           <ul id="progressbar">
             <li class="active" id="title"><strong>Title</strong></li>
             <li id="personal"><strong>URL</strong></li>
@@ -86,7 +83,7 @@
             <input
               type="submit"
               name="submit"
-              class="action-button"
+              class="action-button submit-button"
               value="Submit"
             />
             <input
@@ -101,7 +98,11 @@
     </div>
   </div>
 </div>
-
+<div class="overlayx"></div>
+<div class="spannerx">
+  <div class="loaderx"></div>
+  <h4>Detecting your URL...</h4>
+</div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
 <script src="../static/js/predict-form.js"></script>
