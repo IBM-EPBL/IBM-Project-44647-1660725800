@@ -1,0 +1,10 @@
+.userInfo-table {
+  width: 100%;
+}
+.userInfo-table tr td:first-child {
+  text-align: left;
+  font-weight: bold;
+}
+.userInfo-table {
+  margin-left: 2em;
+}

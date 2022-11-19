@@ -1,0 +1,106 @@
+{% extends "./templates/base.html" %} {% block base %} {%include
+"./templates/navbar.html" %}
+<link rel="stylesheet" href="../static/css/prediction-result.css" />
+<div class="container prediction-result-div">
+  <h3 class="prediction-result-heading">Here is your URL status!</h3>
+  <div class="row sub-div">
+    <div class="col-lg-6">
+      <div class="col-lg-12 card content-div content-div-1 mb-4  h-100">
+        <div class="content">
+            <div class="header">
+              <h3>STATUS</h3>
+              <h1 class="url-heading">{{urlInfo['title']}}</h1>
+            </div>
+            <p class="url-link">{{urlInfo['url']}}</p>
+            <div class="desc">
+                {% if urlInfo['status']=='safe'%}
+              <p>This is not a phishing URL. So, you can share any of your details in this site</p>
+              {%endif %}
+              {% if urlInfo['status']=='unsafe'%}
+              <p>This is a phishing URL. Please don't share your details. Be Safe!</p>
+              <div class="faqLink">
+              <a href="#faq-section" >FAQs On Phishing URL</a>
+              </div>
+              {%endif %}
+            </div>
+            <div class="status">
+                {% if urlInfo['status']=='safe'%}
+              <div class="status-text safe-text">Safe Link<i class="fa fa-check safe" aria-hidden="true"></i></div>
+              {%endif %}
+              {% if urlInfo['status']=='unsafe'%}
+              <div class="status-text unsafe-text">Unsafe Link<i class="fa fa-times unsafe" aria-hidden="true"></i></div>
+              {%endif %}
+            </div>
+            {% if urlInfo['status']=='safe'%}
+            <a href={{urlInfo['url']}} class="siteLink"><i class="fa fa-link"></i>Go to this site</a>
+            {%endif %}
+            {% if urlInfo['status']=='unsafe'%}
+            <span class="warning"><i class="fa fa-warning"></i>Don't go to this site</span>
+            {%endif %}
+          </div>
+        </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="col-lg-12 card content-div mb-4  h-100">
+        {% if urlInfo['status']=='safe' %}
+        <img src="../static/images/smileyEmoji.png" class="smiley-image" />
+        {% endif %} {% if urlInfo['status']=='unsafe' %}
+        <img src="../static/images/shockedEmoji.png" class="shocked-image" />
+        {% endif %}
+        <h3 class="result-message">{{urlInfo['message']}}</h1>
+      <a href="/detection-history">Detection History</a>
+      <a href="/detect">Detect Again</a>
+      </div>
+    </div>
+  </div>
+</div>
+{% if urlInfo['status']=='unsafe'%}
+<div class="container">
+    <section id="faq-section">
+        <h1 class="faq-title">FAQs about phishing URL</h1>
+        <div>
+                    <ul class="faq-list">
+                        <li>
+                            <h4 class="faq-heading"> How can I identify a Phishing scam? </h4>
+                            <p class="read faq-text">
+                              The first rule to remember is to never give out any personal information in an email.  No institution, bank or otherwise, will ever ask for this information via email.  It may not always be easy to tell whether an email or website is legitimate and phishing emails are using social engineering tactics to make create sophisticated scams.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading"> Do I only need to worry about Phishing attacks via email? </h4>
+                            <p class="read faq-text">
+                              No.  Phishing attacks can also occur through phone calls, texts, instant messaging, or malware on your computer which can track how you use your computer and send valuable information to identity thieves. It is important to be vigilant at all times and remain suspicious of sources that ask for your credentials and other personal information.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading"> What kind of information should I protect? </h4>
+                            <p class="read faq-text">
+                              You should protect all sensitive and confidential data. For information on what is considered sensitive and confidential data.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading">
+                              Why Is Phishing Dangerous?
+                            </h4>
+                            <p class="read faq-text">
+                              Phishing is dangerous for anyone who is even remotely touched by technology because it puts them under the risk of being monitored and exploited. Although significant attacks are carried out on companies, phishing attacks don’t have any particular target list, leaving every technology user exposed to the risk. These attacks typically take advantage of a person’s psychological drawbacks and use them to the benefit of the attackers.
+                            </p>
+                        </li>
+                        <li>
+                            <h4 class="faq-heading">
+                              What Do You Do If You Suspect Phishing?
+                            </h4>
+                            <p class="read faq-text">
+                              Cybersecurity experts recommend users to treat every email they receive as a phishing email so that they are extra careful about all the links and attachments inside the email. At any point in time, when you suspect an email, never reveal your personal information, click any links or open attachments in the email.Make sure to check the accuracy of the e-mail by hovering over the e-mail links to check if the URL is real and original. Compare the email template with an actual email that you have received previously from the trusted source. If you see anything fishy, then it is better to ignore the message or contact the trusted source directly through a phone call or an email to inquire about the issue.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+    </section>
+</div>
+{%endif %}
+<script
+  src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+></script>
+<script src="../static/js/prediction-result.js"></script>
+{% endblock %}
