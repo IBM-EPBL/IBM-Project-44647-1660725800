@@ -41,11 +41,11 @@ IBMDB_URL='DATABASE=DATABASE_NAME;HOSTNAME=HOST_NAME;PORT=PORT_NUMBER;SECURITY=S
 SECRET_KEY= SECRET_KEY_VALUE
 ```
 
-- For the contact form, use the service called email.js.
+- For the contact form to send the queries, use the service called email.js.
 
 - Create the account on email.js (https://www.emailjs.com/)
 
-- Then create the service and template
+- Then create the mail service and template on email.js
 
 - Then take the service id, template id and user id and paste it in contact.js (/static/js/contact.js)
 
