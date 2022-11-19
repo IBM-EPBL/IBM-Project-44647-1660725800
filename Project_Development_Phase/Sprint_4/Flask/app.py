@@ -122,9 +122,9 @@ def index():
         if(session['logged_in']==True):
             return render_template('./index.html',userInfo=session['user'],carousel_content=carouselData['carousel_content'],currentYear=datetime.date.today().year)
         else:
-            return render_template('./index.html',carousel_content=carouselData['carousel_content'],currentYear=datetime.date.today())
+            return render_template('./index.html',carousel_content=carouselData['carousel_content'],currentYear=datetime.date.today().year)
     else:
-        return render_template('./index.html',carousel_content=carouselData['carousel_content'],currentYear=datetime.date.today())
+        return render_template('./index.html',carousel_content=carouselData['carousel_content'],currentYear=datetime.date.today().year)
 
 
 
