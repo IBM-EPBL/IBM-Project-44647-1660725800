@@ -2,7 +2,7 @@
 
 ## Web Phishing Detection
 
-- Demo Video Link : https://drive.google.com/drive/folders/1G-lkFrNqTxhWwNBX6YJP1trVlE130C_3?usp=sharing
+- Demo Video Link : https://drive.google.com/file/d/1pqEgfEm-q96Oa9qVDKYxfQSVFLwsgKi0/view?usp=sharing
 
 ## Screenshots
 
