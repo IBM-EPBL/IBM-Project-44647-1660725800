@@ -20,7 +20,7 @@
       "techStacksList": [
         "Frontend: HTML,CSS,JavaScript",
         "Backend: Flask",
-        "Database: MongoDB",
+        "Database: IBM Db2 on IBM Cloud",
         "Cloud: IBM Cloud",
         "Data processing & ML: Sklearn,Numpy,Matplotlib,Pandas",
         "ML model for detection: Decision Tree Regression"
