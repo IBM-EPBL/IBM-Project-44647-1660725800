@@ -1,0 +1,162 @@
+<link rel="stylesheet" href="../static/css/account.css" />
+<div
+  class="modal fade"
+  id="exampleModalCenter"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="exampleModalCenterTitle"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title title login" id="exampleModalLongTitle">
+          Log in
+        </h3>
+        <h3 class="modal-title title signup" id="exampleModalLongTitle">
+          Sign Up
+        </h3>
+        <button
+          type="button"
+          class="close"
+          data-dismiss="modal"
+          aria-label="Close"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="login-container login">
+          <form
+            action="http://localhost:5000/login/"
+            autocomplete="off"
+            method="POST"
+          >
+            <div class="form-inputs">
+              <label for="email"> <b>Email</b></label>
+              <input
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+                required
+                class="loginInput loginemail"
+              />
+              <label for="psw"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                required
+                class="loginInput loginPassword"
+              />
+            </div>
+            {% with messages =
+            get_flashed_messages(category_filter=["loginError"]) %} {% if
+            messages %} {% for message in messages %}
+            <span class="loginErrorMessage alert alert-danger" role="alert"
+              >{{ message }}</span
+            >
+            {% endfor %} {% endif %} {% endwith %}
+            <button class="cta-btn">Log In</button>
+            <p class="subtitle login">
+              Don't have an account? <a href="#" class="showSignup"> sign Up</a>
+            </p>
+          </form>
+        </div>
+        <div class="signup-container signup">
+          <form
+            action="http://localhost:5000/signup/"
+            onSubmit="return checkRegisterForm()"
+            autocomplete="off"
+            method="POST"
+          >
+            <div class="form-inputs">
+              <label for="fullName"> <b>Full Name</b></label>
+              <input
+                type="text"
+                placeholder="Enter Full Name"
+                name="fullName"
+                required
+                class="signupInput"
+              />
+              <label for="email"> <b>Email</b></label>
+              <input
+                type="email"
+                placeholder="Enter Email"
+                name="email"
+                required
+                class="signupInput"
+              />
+              <label for="phoneNumber"> <b>Phone Number</b></label>
+              <input
+                type="number"
+                placeholder="Enter Phone Number"
+                name="phoneNumber"
+                required
+                class="signupInput"
+              />
+              <label for="password"><b>Password</b></label>
+              <input
+                type="password"
+                placeholder="Enter Password"
+                name="password"
+                required
+                class="signupInput registerPassword"
+              />
+              <span class="password-error"></span>
+            </div>
+            {% with messages =
+            get_flashed_messages(category_filter=["signupError"]) %} {% if
+            messages %} {% for message in messages %}
+            <span class="signupErrorMessage alert alert-danger" role="alert"
+              >{{ message }}</span
+            >
+            {% endfor %} {% endif %} {% endwith %}
+            <button class="cta-btn">Sign Up</button>
+            <p class="subtitle signup">
+              Already a existing user? <a href="#" class="showLogin"> login</a>
+            </p>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="../static/js/account.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"
+></script>
+{% if signupError %}
+<script>
+  $(document).ready(function () {
+    $("#exampleModalCenter").modal("show");
+    $(".signup").css("display", "block");
+    $(".login").css("display", "none");
+  });
+</script>
+{% endif %} {% if loginError %}
+<script>
+  $(document).ready(function () {
+    $("#exampleModalCenter").modal("show");
+    $(".signup").css("display", "none");
+    $(".login").css("display", "show");
+    $(".loginInput").on("keypress", () => {
+      $(".loginErrorMessage").css("display", "none");
+    });
+    $(".signupInput").on("keypress", () => {
+      $(".signupErrorMessage").css("display", "none");
+    });
+    $(".close").on("click", () => {
+      $(".loginErrorMessage").css("display", "none");
+      $(".signupErrorMessage").css("display", "none");
+    });
+  });
+</script>
+{% endif %}

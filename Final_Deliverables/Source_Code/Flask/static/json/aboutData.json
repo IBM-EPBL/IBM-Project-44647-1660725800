@@ -1,0 +1,31 @@
+{
+  "aboutContents": [
+    {
+      "title": "What is Web Phishing?",
+      "description": "Web phishing is one of many security threats to web services on the Internet. There are e-banking websites that ask users to provide sensitive data such as username, password & credit card details, etc., often for malicious reasons. This type of e-banking website is known as a phishing website.",
+      "imageURL": "../static/images/about-image-1.jpg"
+    },
+    {
+      "title": "Our approach to counter web phishing:",
+      "description": "In order to detect and predict e-banking phishing websites, we proposed an intelligent, flexible and effective system that is based on using classification algorithms.  We implemented classification algorithms and techniques to extract the phishing datasets criteria to classify their legitimacy",
+      "imageURL": "../static/images/about-image-2.jpg"
+    },
+    {
+      "title": "How is phishing detection done?",
+      "description": "The e-banking phishing website can be detected based on some important characteristics like URL and domain identity, and security and encryption criteria in the final phishing detection rate.",
+      "imageURL": "../static/images/about-image-3.jpg"
+    },
+    {
+      "title": "Tech stack:",
+      "techStacksList": [
+        "Frontend: HTML,CSS,JavaScript",
+        "Backend: Flask",
+        "Database: MongoDB",
+        "Cloud: IBM Cloud",
+        "Data processing & ML: Sklearn,Numpy,Matplotlib,Pandas",
+        "ML model for detection: Decision Tree Regression"
+      ],
+      "imageURL": "../static/images/about-image-4.jpg"
+    }
+  ]
+}

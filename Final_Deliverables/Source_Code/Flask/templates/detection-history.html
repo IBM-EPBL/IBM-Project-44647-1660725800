@@ -1,0 +1,62 @@
+{% extends "./templates/base.html" %} {% block base %} {%include
+"./templates/navbar.html" %}
+<link rel="stylesheet" href="../static/css/detection-history.css" />
+<div class="container detection-history-div">
+  <h1 class="detection-history-heading">Detection History</h1>
+<div class="detection-history-content">
+<div class="card box-shadow card-container">
+  <div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2 table-heading"><h5>Title</h5></div>
+    <div class="col-lg-5 col-md-5 col-sm-5 table-heading"><h5>URL</h5></div>
+    <div class="col-lg-2 col-md-2 col-sm-2 table-heading"><h5>Status</h5></div>
+    <div class="col-lg-3 col-md-3 col-sm-3 table-heading"><h5>Action</h5></div>
+  </div>
+</div>
+  {% if not detectionHistory %}
+  <div class="nothing-to-show-div">
+  <img src="../static/images/nothing_to_show.jpg" class="nothing-to-show-image" alt="nothing_to_show"/>
+  <h6>No history found. Click <a href='/detect'>here</a> to detect</h6>
+</div>
+  {% endif %}
+  {% if detectionHistory %}
+  <div class="card-container-div">
+  {%for history in detectionHistory %}
+  <div class="card card-container table-content">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-sm-2">{{history['TITLE']}}</div>
+      <div class="col-lg-5 col-md-5 col-sm-5">{{history['URL']}}</div>
+      {% if history['STATUS'] =='safe' %}
+      <div class="col-lg-2 col-md-2 col-sm-2 safe">
+        <span class="safe-text"> Safe Link</span>
+        <i class="fa fa-check" aria-hidden="true"></i>
+      </div>
+      {% endif %} {% if history['STATUS'] == 'unsafe'%}
+      <div class="col-lg-2 col-md-2 col-sm-2 unsafe">
+        <span class="unsafe-text"> Unsafe Link </span
+        ><i class="fa fa-times" aria-hidden="true"></i>
+      </div>
+      {% endif %}
+      {% if history['STATUS']=='safe' %}
+      <div class="col-lg-3  col-md-3 col-sm-3 safe">
+        <a href={{history['URL']}}><i
+          class="fa fa-link "
+          aria-hidden="true"
+        ></i>Allowed</a>
+      </div>
+      {% endif %}
+      {% if history['STATUS']=='unsafe' %}
+      <div class="col-lg-3 col-md-3 col-sm-3 unsafe unsafe-notAllowed">
+        <i
+          class="fa fa-link "
+          aria-hidden="true"
+        ></i><span >Not allowed</span>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+</div>
+  {% endif %}
+</div>
+</div>
+{% endblock %}

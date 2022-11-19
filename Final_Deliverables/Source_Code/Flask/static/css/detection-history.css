@@ -1,0 +1,82 @@
+.navbar {
+  background-color: rgb(69, 69, 185);
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.detection-history-div {
+  margin-top: 3em;
+}
+.detection-history-heading {
+  padding-top: 1.5em;
+  padding-bottom: 0.5em;
+  font-weight: bold;
+  text-align: center;
+}
+.card-container {
+  margin-top: 1em;
+  padding: 1em;
+  text-align: center;
+}
+.card-container-div {
+  width: 100%;
+  height: 50vh;
+  overflow-y: scroll;
+}
+.card-container-div::-webkit-scrollbar {
+  display: none;
+}
+.card-container-div {
+  -ms-overflow-y-style: none;
+  scrollbar-width: none;
+}
+.fa-trash {
+  font-size: 20px;
+}
+.safe {
+  color: hsl(158, 36%, 37%) !important;
+}
+.unsafe {
+  color: rgb(194, 4, 4) !important;
+}
+.safe-text,
+.unsafe-text {
+  font-weight: bold;
+}
+.table-heading {
+  font-size: 1.5em;
+  text-align: center;
+}
+.safe a i {
+  margin-right: 0.3em;
+}
+.unsafe span {
+  margin-left: 0.3em;
+}
+.safe a {
+  color: hsl(158, 36%, 37%) !important;
+  cursor: pointer;
+  font-weight: bold;
+}
+.unsafe-notAllowed {
+  cursor: not-allowed;
+  font-weight: bold;
+}
+.nothing-to-show-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: auto;
+}
+.nothing-to-show-image {
+  width: 50%;
+}
+.detection-history-content {
+  overflow-x: scroll;
+}
+.card-container:first-child {
+  margin-top: 1em;
+}
+.box-shadow {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
