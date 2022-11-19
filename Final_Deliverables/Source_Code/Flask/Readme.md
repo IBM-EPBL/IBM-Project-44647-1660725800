@@ -1,5 +1,13 @@
 # Web Phishing Detection
 
+## Tech Stacks Used
+
+- HTML
+- CSS
+- Javascript
+- Flask
+- IBM Db2 on cloud
+
 ### Procedure to Run this application
 
 - Clone this repository
