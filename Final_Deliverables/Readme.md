@@ -68,12 +68,12 @@
 ![14](https://user-images.githubusercontent.com/113231326/202847758-44d8b8e9-ab16-44bf-9603-1e844fe0d3e0.jpg)
 
 
-### Database Account Schema
+### Database Table Account Schema
 
 ![15](https://user-images.githubusercontent.com/113231326/202847761-d9cad3e7-c5cf-49fd-b899-e16702b8a256.jpg)
 
 
-### Database DetectionHistory Schema
+### Database Table DetectionHistory Schema
 
 ![16](https://user-images.githubusercontent.com/113231326/202847766-6e4e83f9-a071-4944-943e-3f8df295512c.jpg)
 
