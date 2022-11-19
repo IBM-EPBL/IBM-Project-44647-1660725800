@@ -1,0 +1,64 @@
+<nav class="navbar fixed-top navbar-light">
+  <button class="js-menu-show header__menu-toggle material-icons">menu</button>
+  <aside class="js-side-nav side-nav">
+    <nav class="js-side-nav-container side-nav__container">
+      <button class="js-menu-hide side-nav__hide material-icons">close</button>
+      <header class="side-nav__header">Menu</header>
+      <ul class="side-nav__content">
+        <li><a href="/">Home</a></li>
+        {% if userInfo %}
+        <li><a href="/detect/">Detect URL</a></li>
+        <li><a href="/detection-history/">Detection History</a></li>
+        {% endif %}
+        <li><a href="/about/">About</a></li>
+        <li><a href="/contact/">Contact Us</a></li>
+        {% if userInfo %}
+        <li class="logout-list">
+          <form action="http://localhost:5000/logout/" method="Get">
+            <input class="logout-link" type="submit" value="Logout" />
+          </form>
+        </li>
+        {% endif %}
+      </ul>
+      <span class="copyright"
+        ><b>© Copyright</b> Team Id: PNT2022TMID24691 {{ currentYear }}</span
+      >
+    </nav>
+  </aside>
+  <div class="navbar-text">
+    {% if userInfo %}
+    <span class="welcomeUser"> Welcome! {{ userInfo['fullName']}}</span
+    ><span class="vertical-line">|</span>
+    <span
+      class="userInfo"
+      data-toggle="modal"
+      data-target="#profileModal"
+      data-backdrop="static"
+      data-keyboard="false"
+    >
+      <i class="fa fa-user" aria-hidden="true"></i>User Info</span
+    >
+    {% endif %} {% if not userInfo %}
+    <span class="alert alert-danger alert-div" role="alert"
+      ><i
+        class="fa fa-exclamation-triangle exclamationIcon"
+        aria-hidden="true"
+      ></i>
+      Please login to detect your url</span
+    >
+    {% endif %} {% if not userInfo %}
+    <span
+      class="loginButton"
+      data-toggle="modal"
+      data-target="#exampleModalCenter"
+      data-backdrop="static"
+      data-keyboard="false"
+    >
+      Login
+    </span>
+    {% endif %}
+  </div>
+</nav>
+{%include "./templates/account.html" %} {% block navbar %} {% endblock %}
+{%include "./templates/userInfo.html" %} {% block userInfo %} {% endblock %}
+<script src="../static/js/navbar.js"></script>

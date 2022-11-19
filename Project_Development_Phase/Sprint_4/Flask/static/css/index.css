@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400&display=swap");
+.carousel {
+  height: 100vh;
+}
+.carousel-item img {
+  height: 100vh;
+  width: 100%;
+  filter: brightness(27%);
+}
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+.heading-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  position: fixed;
+  z-index: 1;
+}
+.heading {
+  font-size: 5em;
+}
+.heading-div button {
+  margin-top: 1.3em;
+  padding: 0.5em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+.heading-div p {
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-size: 1.7em;
+  padding-top: 0.5em;
+}
