@@ -127,7 +127,7 @@ def predict():
         session['predicted']=True
         if(output==1):
             pred = "Wohoo! You are good to go."
-            session['safe']=True
+            session['safe']=False
             session['pred'] = pred
 
         else:
