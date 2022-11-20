@@ -15,3 +15,20 @@ Applying a machine-learning algorithm to identify phishing websites is the major
 We suggested a clever, adaptable, and successful method that is based on applying classification algorithms in order to identify and anticipate e-banking phishing websites. We used classification methods and approaches to extract the phishing datasets' eligibility criteria and interpret them. 
 
 The e-banking phishing website may be identified using various key features, including the URL and domain identification, security and encryption requirements, and the overall phishing detection rate. Once a user completes an online transaction and pays through an e-banking website, our system uses a data mining algorithm to determine if the e-banking website is legitimate or a phishing website.
+
+### Project Contributors
+
+<table>
+<tbody><tr>
+<td align="center"><a href="https://github.com/saadhanag13"><img alt="" src="https://avatars.githubusercontent.com/u/87087654?v=4" width="100px;"><br><sub><b> Saadhana G </b></sub></a><br><a href="https://github.com/IBM-EPBL/IBM-Project-44647-1660725800/commits?author=saadhanag13"></a></td> </a></td>
+
+<td align="center"><a href="https://github.com/anjupriya2002"><img alt="" src="https://avatars.githubusercontent.com/u/113231326?v=4" width="100px;"><br><sub><b> Anjupriya V </b></sub></a><br><a href="https://github.com/IBM-EPBL/IBM-Project-44647-1660725800/commits?author=anjupriya2002" ></a></td> </a></td></a></td> </a></td>
+
+
+<td align="center"><a href="https://github.com/sreelakshmig009"><img alt="" src="https://avatars.githubusercontent.com/u/81172589?v=4" width="100px;"><br><sub><b> Sreelakshmi G </b></sub></a><br><a href="https://github.com/IBM-EPBL/IBM-Project-44647-1660725800/commits?author=sreelakshmig009" ></a></td> </a></td></a></td> </a></td>
+
+<td align="center"><a href="https://github.com/M-Venkatachalam"><img alt="" src="https://avatars.githubusercontent.com/u/68814267?v=4" width="100px;"><br><sub><b> M Venkatachalam</b></sub></a><br><a href="https://github.com/IBM-EPBL/IBM-Project-44647-1660725800/commits?author=M-Venkatachalam" ></a></td> </a></td></a></td> </a></td>
+
+</a></td> </a></td>
+</tr>
+</tbody></table>
