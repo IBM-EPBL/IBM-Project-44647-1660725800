@@ -77,7 +77,4 @@
 
 ![16](https://user-images.githubusercontent.com/113231326/202847766-6e4e83f9-a071-4944-943e-3f8df295512c.jpg)
 
-### Demo Link
-
-<a href="https://mega.nz/file/vqh0kaAL#UyBI7bn_B1Ip3qZcbqEfz4tUIqjUdFDwWQyqcyrU44Y">Click here</a>
 
